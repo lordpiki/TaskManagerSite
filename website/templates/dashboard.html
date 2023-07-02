@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+    <link rel="stylesheet" href="style.css">
+
+    <!--===== Boxicons CSS =====-->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Projects</h2>
+        <ul class="project-list">
+            {% for project in projects %}
+            <li data-project-id="{{ project.project_id }}">⚒ - {{ project.name }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="content">
+    <h2 id="selected-project-name">Select a Project</h2>
+    <div class="add-task-container">
+        <input type="text" id="add-task-input" placeholder="Add Task">
+
+        <div class="select-menu">
+        <div class="select-btn">
+            <span class="sBtn-text">Choose priority</span>
+            <i class="bx bx-chevron-down"></i>
+        </div>
+        <ul class="options">
+            <li class="option">
+                <span class="red-dot"></span>
+                <span class="option-text">High</span>
+            </li>
+            <li class="option">
+                <span class="yellow-dot"></span>
+                <span class="option-text">Medium</span>
+            </li>
+            <li class="option">
+                <span class="green-dot"></span>
+                <span class="option-text">Low</span>
+            </li>
+            <li class="option">
+                <span class="gray-dot"></span>
+                <span class="option-text">None</span>
+            </li>
+        </ul>
+        </div>
+
+    </div>
+
+    <ul id="task-list">
+        <!-- Placeholder for task items -->
+    </ul>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='js/dashboard.js') }}"></script>
+</body>
+</html>
+

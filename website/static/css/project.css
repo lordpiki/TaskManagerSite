@@ -1,0 +1,70 @@
+body {
+    background: rgba(32, 33, 35, 1);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: white;
+}
+
+.container {
+    text-align: center;
+}
+
+.container h2 {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.container h3 {
+    margin-bottom: 10px;
+}
+
+.task-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.task-list li {
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+
+.white-button {
+    padding: 8px 20px;
+    border-color: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background-color: transparent;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background-color: transparent;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <title>Project</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/project.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Project: {{ project.name }}</h2>
+        <h3>Tasks:</h3>
+        <ul class="task-list">
+            {% for task in tasks %}
+            <li>{{ task.name }}</li>
+            {% endfor %}
+        </ul>
+
+        <h3>Add New Task:</h3>
+        <button id="add-task-button" class="white-button">Add Task</button>
+
+        <div id="add-task-form" class="hidden">
+            <form action="/project/{{ project.project_id }}/add_task" method="post">
+                <div class="form-group">
+                    <label for="task_name">Task Name:</label>
+                    <input type="text" id="task_name" name="task_name" required>
+                </div>
+                <div class="form-group">
+                    <label for="task_color">Task Color:</label>
+                    <input type="text" id="task_color" name="task_color" required>
+                </div>
+                <div class="form-group">
+                    <label for="task_description">Task Description:</label>
+                    <textarea id="task_description" name="task_description" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="task_priority">Task Priority:</label>
+                    <select id="task_priority" name="task_priority">
+                        <option value="None">None</option>
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="submit" class="white-button" value="Create Task">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
